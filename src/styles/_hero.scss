@@ -1,0 +1,93 @@
+@use 'variables';
+
+@font-face {
+    font-family: Lolapeluza;
+    src: url(../../assets/fonts/Lolapeluza-black.woff);
+    font-weight: 700;
+}
+
+.hero {
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    background-image: url(../images/hero-bckg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+
+    .container {
+        position: relative;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: variables.$secondaryColor;
+        opacity: .68;
+    }
+
+    &__image {
+        max-width: 150px;
+        border-radius: 50%;
+    }
+
+    &__title {
+        padding: 2vw;
+        font-size: 60px;
+        line-height: 76px;
+        text-transform: uppercase;
+    }
+
+    span {
+        font-family: 'Lolapeluza', sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        color: white;
+    }
+
+    .info-bar {
+        background-color: variables.$mainColor;
+        margin-top: 24px;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+
+        &__list {
+            display: flex;
+            gap: 100px;
+            text-align: center;
+
+            &__item {
+                font-weight: bold;
+
+                b {
+                    display: block;
+                }
+            }
+        }
+
+        @media (max-width: 640px) {
+            display: block;
+    
+            &__list {
+                display: block;
+    
+                &__item {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    
+        @media (max-width: 1024px) {
+            &__list {
+                gap: 16px;
+            }
+        }
+    }
+}
